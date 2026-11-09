@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "live2d-avatar-pipeline"
+version = "1.0.0"
+authors = [
+  { name="Ran1013" },
+]
+description = "Automated 2D Character Layer Splitting, Live2D Rigging, and Procedural Model Repair Toolkit"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+    "numpy>=1.24.0",
+    "Pillow>=9.5.0",
+    "scipy>=1.10.0",
+    "pytoshop>=1.2.1",
+    "packbits>=0.2.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+online = [
+    "gradio_client>=0.10.0",
+    "requests>=2.28.0",
+]
+
+[project.scripts]
+avatar-pipeline = "live2d_pipeline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["live2d_pipeline*"]

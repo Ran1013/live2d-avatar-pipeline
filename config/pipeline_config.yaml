@@ -1,0 +1,32 @@
+# Live2D Avatar Pipeline Configuration
+
+pipeline:
+  atlas_budget: 4096
+  supersample_factor: 8
+  min_alpha_threshold: 8
+  clean_specks_ratio: 0.10
+
+mouth_repair:
+  mode: "dual" # "dual" (closed/open) or "multilevel"
+  default_rx: 16.0
+  default_depth: 12.0
+  default_lift: 2.0
+  lip_y_ratio: 0.50
+  talk_amplitude_boost: 1.35
+  lock_form_zero: true
+
+eye_repair:
+  close_eye_swap_threshold: 0.06
+  iris_supersample: 8
+  eyelash_stroke_width: 14
+  lash_color: [45, 24, 20]
+
+motion_sanitizer:
+  fix_target_model: true
+  zero_nod_leg_distortion: true
+  amplification: 1.35
+
+vtube_studio:
+  idle_fallback_enabled: true
+  mouth_open_output_max: 1.0
+  eye_open_output_max: 1.15
